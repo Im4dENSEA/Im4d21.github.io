@@ -12,7 +12,7 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #0f1419;
             padding: 20px;
             min-height: 100vh;
         }
@@ -24,10 +24,10 @@
         
         h1 {
             text-align: center;
-            color: white;
+            color: #e4e7eb;
             margin-bottom: 30px;
             font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
         .tabs {
@@ -39,33 +39,35 @@
         
         .tab-button {
             padding: 15px 30px;
-            background: rgba(255,255,255,0.2);
-            border: 2px solid white;
-            color: white;
+            background: #1a2332;
+            border: 2px solid #2d3e50;
+            color: #8b95a5;
             font-size: 1.1em;
             font-weight: bold;
             cursor: pointer;
             border-radius: 10px;
             transition: all 0.3s;
-            backdrop-filter: blur(10px);
         }
         
         .tab-button:hover {
-            background: rgba(255,255,255,0.3);
+            background: #243447;
+            border-color: #3d5266;
+            color: #c5cdd8;
             transform: translateY(-2px);
         }
         
         .tab-button.active {
-            background: white;
-            color: #667eea;
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
         }
         
         .schema-container {
             display: none;
-            background: white;
+            background: #1a2332;
             border-radius: 20px;
             padding: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
         }
         
         .schema-container.active {
@@ -80,10 +82,10 @@
         
         .schema-title {
             text-align: center;
-            color: #667eea;
+            color: #e4e7eb;
             font-size: 2em;
             margin-bottom: 40px;
-            border-bottom: 3px solid #667eea;
+            border-bottom: 3px solid #2563eb;
             padding-bottom: 15px;
         }
         
@@ -93,7 +95,7 @@
         }
         
         .step-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
             color: white;
             padding: 15px 20px;
             border-radius: 10px;
@@ -107,7 +109,7 @@
         
         .step-number {
             background: white;
-            color: #667eea;
+            color: #2563eb;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -128,32 +130,35 @@
         }
         
         .actor {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: #2d3e50;
             color: white;
             padding: 20px;
             border-radius: 15px;
             min-width: 180px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             flex: 1;
+            border: 2px solid #3d5266;
         }
         
         .actor.attacker {
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            background: #dc2626;
+            border-color: #b91c1c;
         }
         
         .actor.kdc {
-            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+            background: #0891b2;
+            border-color: #0e7490;
         }
         
         .actor.ad {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            color: #333;
+            background: #059669;
+            border-color: #047857;
         }
         
         .actor.service {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-            color: #333;
+            background: #7c3aed;
+            border-color: #6d28d9;
         }
         
         .actor-title {
@@ -169,62 +174,68 @@
         
         .arrow {
             font-size: 2em;
-            color: #667eea;
+            color: #60a5fa;
             margin: 0 10px;
         }
         
         .arrow-down {
             text-align: center;
             font-size: 2em;
-            color: #667eea;
+            color: #60a5fa;
             margin: 10px 0;
         }
         
         .message-box {
-            background: #f0f4ff;
-            border-left: 5px solid #667eea;
+            background: #1e293b;
+            border-left: 5px solid #3b82f6;
             padding: 15px;
             margin: 15px 0;
             border-radius: 5px;
             font-family: 'Courier New', monospace;
+            color: #e2e8f0;
         }
         
         .info-box {
-            background: #fff3cd;
-            border-left: 5px solid #ffc107;
+            background: #422006;
+            border-left: 5px solid #f59e0b;
             padding: 15px;
             margin: 15px 0;
             border-radius: 5px;
+            color: #fde68a;
         }
         
         .danger-box {
-            background: #f8d7da;
-            border-left: 5px solid #dc3545;
+            background: #450a0a;
+            border-left: 5px solid #ef4444;
             padding: 15px;
             margin: 15px 0;
             border-radius: 5px;
+            color: #fecaca;
         }
         
         .success-box {
-            background: #d4edda;
-            border-left: 5px solid #28a745;
+            background: #052e16;
+            border-left: 5px solid #22c55e;
             padding: 15px;
             margin: 15px 0;
             border-radius: 5px;
+            color: #bbf7d0;
         }
         
         .code-box {
-            background: #1e1e1e;
-            color: #d4d4d4;
+            background: #0d1117;
+            color: #c9d1d9;
             padding: 20px;
             border-radius: 10px;
             font-family: 'Courier New', monospace;
             overflow-x: auto;
             margin: 15px 0;
+            border: 1px solid #30363d;
         }
         
         .highlight {
-            background: #fffacd;
+            background: #3730a3;
+            color: #e0e7ff;
             padding: 2px 5px;
             border-radius: 3px;
             font-weight: bold;
@@ -238,11 +249,12 @@
         }
         
         .defense-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #1e3a8a;
             color: white;
             padding: 25px;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border: 2px solid #1e40af;
         }
         
         .defense-card h3 {
@@ -285,7 +297,7 @@
             top: 0;
             bottom: 0;
             width: 3px;
-            background: #667eea;
+            background: #3b82f6;
         }
         
         .timeline-item {
@@ -301,9 +313,9 @@
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            background: #667eea;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px #667eea;
+            background: #3b82f6;
+            border: 3px solid #1a2332;
+            box-shadow: 0 0 0 3px #3b82f6;
         }
         
         .comparison-table {
@@ -316,17 +328,18 @@
         .comparison-table td {
             padding: 15px;
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #2d3e50;
+            color: #e2e8f0;
         }
         
         .comparison-table th {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #1e3a8a;
             color: white;
             font-weight: bold;
         }
         
         .comparison-table tr:hover {
-            background: #f5f5f5;
+            background: #243447;
         }
         
         .emoji {
@@ -1317,5 +1330,4 @@ foreach ($account in $ServiceAccounts) {
         }
     </script>
 </body>
-</html># Im4d21.github.io
-Interactive page that explains kerberoasting and provides defense/detection recommendations.
+</html>
