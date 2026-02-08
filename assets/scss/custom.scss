@@ -1,0 +1,14 @@
+// Couleurs personnalisées - Mode clair
+:root {
+    --body-background: #f8f4f4;
+    --card-background: #ffffff;
+}
+
+// Couleurs personnalisées - Mode sombre
+:root[data-scheme="dark"] {
+    --body-background: #0a0e1a;
+    --card-background: #0f1525;
+    --card-background-selected: #141c30;
+    --card-text-color-main: rgba(255, 255, 255, 0.9);
+    --card-text-color-secondary: rgba(255, 255, 255, 0.7);
+}

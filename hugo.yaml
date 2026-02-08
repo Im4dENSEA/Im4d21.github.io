@@ -1,0 +1,96 @@
+baseURL: https://im4d21.github.io/
+languageCode: fr
+title: Im4d21 Blog
+theme: hugo-theme-stack
+
+defaultContentLanguage: fr
+hasCJKLanguage: false
+
+pagination:
+  pagerSize: 5
+
+permalinks:
+  post: /p/:slug/
+  page: /:slug/
+
+params:
+  mainSections:
+    - post
+  rssFullContent: true
+  favicon: ""
+
+  footer:
+    since: 2025
+
+  sidebar:
+    subtitle: Cybersecurity Engineer
+    avatar: img/avatar.jpg
+
+  article:
+    license:
+      enabled: false
+
+  widgets:
+    homepage:
+      - type: search
+      - type: archives
+        params:
+          limit: 5
+      - type: categories
+        params:
+          limit: 10
+      - type: tag-cloud
+        params:
+          limit: 10
+    page:
+      - type: toc
+
+  comments:
+    enabled: false
+
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - ["\\[", "\\]"]
+            - ["$$", "$$"]
+          inline:
+            - ["\\(", "\\)"]
+    renderer:
+      unsafe: true
+  tableOfContents:
+    endLevel: 4
+    ordered: true
+    startLevel: 2
+  highlight:
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: true
+    tabWidth: 4
+
+related:
+  includeNewer: true
+  threshold: 60
+  toLower: false
+  indices:
+    - name: tags
+      weight: 100
+    - name: categories
+      weight: 200
+
+menu:
+  social:
+    - identifier: github
+      name: GitHub
+      url: https://github.com/Im4dENSEA
+      params:
+        icon: brand-github
+    - identifier : Linkedin
+      name : linkedIn
+      url: https://www.linkedin.com/in/imad-t-bb400a298/
