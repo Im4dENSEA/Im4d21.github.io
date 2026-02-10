@@ -47,7 +47,7 @@ Get-ADUser -Filter {ServicePrincipalName -ne "$null"} `
 
 ---
 
-### Étape 2 : Demande de TGS (Ticket Granting Service)
+### Étape 2 : Demande de ticket de Service (Fournit par TGS (Ticket Granting Service))
 
 1. **Attaquant → KDC :** "Je veux accéder au service `MSSQLSvc/srv-sql01.corp.local:1433`" *(avec mon TGT valide comme preuve d'identité)*
 
@@ -304,7 +304,7 @@ SecurityEvent
 
 ### 6. Honeypot SPN (Canary Tokens)
 
-**Stratégie :** Créer des comptes de service "leurres" avec des noms attractifs. **Toute demande de TGS = attaque confirmée à 100%**.
+**Stratégie :** Créer des comptes de service "leurres" avec des noms attractifs. **Toute demande de TGS = attaque confirmée**.
 
 ```powershell
 # 1. Créer le compte avec un nom attractif
@@ -318,10 +318,10 @@ setspn -A MSSQLSvc/honeypot-backup.corp.local:1433 SQL_Backup_Admin
 
 # 3. Configurer une alerte SIEM
 # Event 4769 WHERE ServiceName = "MSSQLSvc/honeypot-backup.corp.local:1433"
-# → Alerte critique immédiate
+# → Alerte immédiate
 ```
 
-**Noms attractifs pour honeypots :** `SQL_Admin_Backup`, `Exchange_Migration_Svc`, `VMware_vCenter_Admin`, `Backup_Domain_Admin`, `SAP_Super_User`
+**Examples de noms attractifs pour honeypots :** `SQL_Admin_Backup`, `Exchange_Migration_Svc`, `VMware_vCenter_Admin`, `Backup_Domain_Admin`, `SAP_Super_User`
 
 ---
 
@@ -362,10 +362,10 @@ foreach ($account in $ServiceAccounts) {
 
 ### Playbook de réponse à incident
 
-1. **Isolation immédiate (< 5 min) :** Bloquer l'IP source, désactiver le compte compromis, isoler la machine (VLAN quarantaine)
-2. **Révocation et rotation (< 15 min) :** Reset des passwords de TOUS les comptes SPN, purge des tickets Kerberos, révocation des sessions
-3. **Investigation (< 1h) :** Memory dump, analyse des Event Logs sur 30 jours, recherche de reconnaissance LDAP
-4. **Hardening post-incident :** Déploiement gMSA, désactivation RC4, honeypots SPN, renforcement SIEM
+1. **Isolation immédiate (< 5 min) :** Bloquer l'IP source, désactiver le compte compromis, isoler la machine.
+2. **Révocation et rotation (< 15 min) :** Reset des passwords de tous les comptes SPN, purge des tickets Kerberos, révocation des sessions.
+3. **Investigation (< 1h) :** Memory dump, analyse des Event Logs sur 30 jours, recherche de reconnaissance LDAP.
+4. **Hardening post-incident :** Déploiement gMSA, désactivation RC4, honeypots SPN, renforcement SIEM.
 
 ---
 
