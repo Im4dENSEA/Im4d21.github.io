@@ -47,7 +47,7 @@ Get-ADUser -Filter {ServicePrincipalName -ne "$null"} `
 
 ---
 
-### Étape 2 : Demande de ticket de Service (Fournit par TGS (Ticket Granting Service))
+### Étape 2 : Demande de ticket de Service - ST (Délivré par TGS)
 
 1. **Attaquant → KDC :** "Je veux accéder au service `MSSQLSvc/srv-sql01.corp.local:1433`" *(avec mon TGT valide comme preuve d'identité)*
 
